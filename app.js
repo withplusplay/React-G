@@ -257,6 +257,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     if (square.classList.contains("bomb")) {
       gameOver(square);
+    } else if (square.classList.contains("gold")) {
+      square.innerHTML = "<img src='./img/goldbar.png' >";
+      square.classList.remove("gold");
+      square.classList.add("checked");
     } else {
       let total = square.getAttribute("data");
       if (total != 0) {
@@ -338,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //show ALL the bombs
     squares.forEach((square) => {
       if (square.classList.contains("bomb")) {
-        square.innerHTML = "💣";
+        square.innerHTML = "<img src='./img/bomb.png' >";
         square.classList.remove("bomb");
         square.classList.add("checked");
       }
