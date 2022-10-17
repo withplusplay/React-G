@@ -1,11 +1,17 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container {
-  width: 500px;
-  align-content: center;
+  width: 960px;
+  height: 960px;
+  background: #4199d3;
 }
 
 .grid {
-  height: 1200px;
-  width: 1200px;
+  height: 840px;
+  width: 840px;
   display: flex;
   flex-wrap: wrap;
   background-color: #dcd6bc;
@@ -29,8 +35,8 @@ div {
 } */
 
 .checked {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border: 2px solid;
   background-color: #cecab7;
   border-color: #9c998d;
@@ -38,16 +44,16 @@ div {
 }
 
 .gold {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border: 5px solid;
   border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
   box-sizing: border-box;
 }
 
 .bomb {
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border: 5px solid;
   border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
   box-sizing: border-box;
