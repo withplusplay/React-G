@@ -190,24 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
       findGold++;
       findGolds.innerHTML = findGold;
     }
+    checkForWin();
   }
 
   //check for win
   function checkForWin() {
     ///simplified win argument
-    let matches = 0;
-
-    for (let i = 0; i < squares.length; i++) {
-      if (
-        squares[i].classList.contains("flag") &&
-        squares[i].classList.contains("bomb")
-      ) {
-        matches++;
-      }
-      if (matches === goldAmount) {
-        result.innerHTML = "YOU WIN!";
-        isGameOver = true;
-      }
+    if (findGold === goldAmount) {
+      result.innerHTML = "YOU WIN!";
+      isGameOver = true;
     }
   }
 });
