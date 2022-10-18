@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
-  const goldsLeft = document.querySelector("#golds-left");
+  const findGolds = document.querySelector("#find-golds");
   const result = document.querySelector("#result");
   let width = 12;
   let goldAmount = 51;
+  let findGold = 0;
   let squares = [];
   let isGameOver = false;
 
   //create Board
   function createBoard() {
-    goldsLeft.innerHTML = goldAmount;
+    findGolds.innerHTML = findGold;
 
     const basedArray = [
       "gold",
@@ -186,6 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
       square.innerHTML = "<img src='./img/goldbar.png' >";
       square.classList.remove("gold");
       square.classList.add("checked");
+      findGold++;
+      findGolds.innerHTML = findGold;
     }
   }
 
