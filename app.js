@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
-  const findGolds = document.querySelector("#find-golds");
+  const foundGold = document.querySelector("#found-golds");
   const result = document.querySelector("#result");
   let width = 12;
-  let goldAmount = 51;
-  let findGold = 0;
   let squares = [];
   let isGameOver = false;
 
+  const initialCapital = 500000000; // 초기자본 5억
+  const cost = 100000000; // 클릭당 비용 1억
+  const goldAmount = 51; // 골드 총량
+  let revenue = 0; // 수익
+  let profit = 0; // 이익
+  let getGold = 0; // 획득 골드수
+
   //create Board
   function createBoard() {
-    findGolds.innerHTML = findGold;
+    foundGold.innerHTML = getGold;
 
     const basedArray = [
       "gold",
@@ -187,8 +192,8 @@ document.addEventListener("DOMContentLoaded", () => {
       square.innerHTML = "<img src='./img/goldbar.png' >";
       square.classList.remove("gold");
       square.classList.add("checked");
-      findGold++;
-      findGolds.innerHTML = findGold;
+      getGold++;
+      foundGold.innerHTML = getGold;
     }
     checkForWin();
   }
@@ -196,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //check for win
   function checkForWin() {
     ///simplified win argument
-    if (findGold === goldAmount) {
+    if (getGold === goldAmount) {
       result.innerHTML = "YOU WIN!";
       isGameOver = true;
     }
