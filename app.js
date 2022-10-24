@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const goldAmount = 51; // 골드 총량
   let totalCost = 0; // 총비용
   let clickCount = 0; // 유효 클릭 카운트
-  let revenue = 0; // 수익
-  let profit = 0; // 이익
+  let totalRevenue = 0; // 총수익
+  let totalProfit = 0; // 총이익
   let getGold = 0; // 획득 골드수
 
   //create Board
@@ -201,9 +201,9 @@ document.addEventListener("DOMContentLoaded", () => {
       //foundGold.innerHTML = getGold;
     }
 
-    totalCost = costExp * clickCount; // 총소모 비용
-    profit = calRevenue() - totalCost;
-    foundGold.innerHTML = profit.toLocaleString("ko-KR");
+    totalCost = costExp * clickCount; // 총 소모 비용
+    totalProfit = calRevenue() - totalCost; // 총 이익 계산
+    foundGold.innerHTML = totalProfit.toLocaleString("ko-KR"); // 이익 계산결과 표시
     checkForComplete();
   }
 
@@ -211,10 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function calRevenue() {
     let mRevenue = 0;
 
-    revenue = getGold * mulExp;
-    // 초기자본(5억) + 수익(황금획득갯수 X 2억) - 비용(1억/클릭) = 이익
-    // mProfit = initialCapital + getGold * mulExp - totalCost;
-    mRevenue = initialCapital + revenue;
+    totalRevenue = getGold * mulExp;
+    // 초기자본(5억) + 총수익(황금획득갯수 X 2억) - 총비용(1억*유효클릭수) = 총이익
+    // mProfit = initialCapital + totalRevenue(getGold * mulExp) - totalCost;
+    mRevenue = initialCapital + totalRevenue;
     return mRevenue;
   }
 
