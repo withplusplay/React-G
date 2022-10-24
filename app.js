@@ -201,21 +201,21 @@ document.addEventListener("DOMContentLoaded", () => {
       //foundGold.innerHTML = getGold;
     }
 
-    totalCost = costExp * clickCount;
-    profit = calProfit() - totalCost;
-    foundGold.innerHTML = profit;
+    totalCost = costExp * clickCount; // 총소모 비용
+    profit = calRevenue() - totalCost;
+    foundGold.innerHTML = profit.toLocaleString("ko-KR");
     checkForComplete();
   }
 
   // calculate profit
-  function calProfit() {
-    let mProfit = 0;
+  function calRevenue() {
+    let mRevenue = 0;
 
     revenue = getGold * mulExp;
     // 초기자본(5억) + 수익(황금획득갯수 X 2억) - 비용(1억/클릭) = 이익
     // mProfit = initialCapital + getGold * mulExp - totalCost;
-    mProfit = initialCapital + revenue;
-    return mProfit;
+    mRevenue = initialCapital + revenue;
+    return mRevenue;
   }
 
   //check for complate
