@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // sound
   let successSound = new Audio("../sound/success.wav");
-  let failSound = new Audio("../sound/fail02.wav");
+  let failSound = new Audio("../sound/fail.wav");
 
   //create Board
   function createBoard() {
