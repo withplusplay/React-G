@@ -106,6 +106,10 @@ a {
   margin-bottom: 46px;
 }
 
+img {
+  filter: drop-shadow(8px 8px 8px #c29e05);
+}
+
 .sep-bar {
   margin-top: 92px;
   position: relative;
@@ -164,41 +168,4 @@ a {
 .play-button svg {
   position: relative;
   left: 3px;
-}
-
-.cshape3 {
-  content: "";
-  margin: 10px;
-  width: 100px;
-  height: 150px;
-  background-image: linear-gradient(135deg, #0fd850 0%, #f9f047 100%);
-  border-radius: 20px;
-  box-shadow: 28px 28px 56px #bec3c8, -28px -28px 56px #ffffff;
-}
-.cshape3 {
-  font-weight: 700;
-  font-size: 5rem;
-  text-align: center;
-  color: #e0e5eb;
-  text-shadow: -8px -8px 16px rgba(255, 255, 255, 0.5),
-    8px 8px 16px rgba(0, 0, 0, 0.1), -2px -2px 4px white,
-    2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.cshape4 {
-  content: "";
-  width: 100px;
-  height: 150px;
-  background-image: linear-gradient(135deg, #f61f1f 0%, #f9f047 100%);
-  border-radius: 20px;
-  box-shadow: 28px 28px 56px #bec3c8, -28px -28px 56px #ffffff;
-}
-
-.cshape4 {
-  font-weight: 700;
-  font-size: 5rem;
-  text-align: center;
-  color: #e0e5eb;
-  text-shadow: -8px -8px 16px rgba(255, 255, 255, 0.5),
-    8px 8px 16px rgba(0, 0, 0, 0.1), -2px -2px 4px white,
-    2px 2px 4px rgba(0, 0, 0, 0.2);
 }
