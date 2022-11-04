@@ -191,6 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
       square.innerHTML = "<img src='./img/bomb.png' >";
       square.classList.remove("bomb");
       square.classList.add("checked");
+      square.classList.add("vibration");
+      setTimeout(function () {
+        square.classList.remove("vibration");
+      }, 400);
       clickCount++;
     } else {
       square.innerHTML = "<img src='./img/goldbar.png' >";

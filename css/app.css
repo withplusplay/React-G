@@ -4,10 +4,41 @@ body {
   height: 100%;
   align-items: center;
   justify-content: center;
+  background-color: #e5edf2;
+}
+
+.phone {
+  width: 1080px;
+  height: 1150px;
+  background-color: #ffd007;
+  position: relative;
+  border-radius: 40px;
+  margin: 30px auto;
+  box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+.phone::after {
+  content: "";
+  width: 135px;
+  height: 6px;
+  background-color: #8f6d00;
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+  margin-left: -67.5px;
+}
+
+.inner {
+  padding: 70px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container {
   width: 960px;
   height: 1010px;
+  border-radius: 30px;
   background: #4199d3;
 }
 
@@ -16,10 +47,10 @@ body {
   width: 840px;
   display: flex;
   flex-wrap: wrap;
-  background-color: #dcd6bc;
+  background-color: #aaa9ad;
   margin-left: 50px;
   margin-top: 50px;
-  border: 10px solid #dcd6bc;
+  border: 10px solid #aaa9ad;
   margin-bottom: 10px;
 }
 
@@ -33,7 +64,7 @@ div {
   height: 70px;
   width: 70px;
   border: 2px solid;
-  background-color: #cecab7;
+  background-color: #d4d3d5;
   border-color: #9c998d;
   box-sizing: border-box;
 }
@@ -42,15 +73,27 @@ div {
   height: 70px;
   width: 70px;
   border: 5px solid;
-  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  border-color: #f0f0f1 #b8b7ba #b8b7ba #e2e2e3;
   box-sizing: border-box;
+}
+
+.checked.vibration {
+  animation: vibration 0.1s infinite;
+}
+@keyframes vibration {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
 }
 
 .bomb {
   height: 70px;
   width: 70px;
   border: 5px solid;
-  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  border-color: #f0f0f1 #b8b7ba #b8b7ba #e2e2e3;
   box-sizing: border-box;
 }
 
