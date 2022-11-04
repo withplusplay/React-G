@@ -77,7 +77,7 @@ div {
   box-sizing: border-box;
 }
 
-.checked.vibration {
+.vibration {
   animation: vibration 0.1s infinite;
 }
 @keyframes vibration {
@@ -86,6 +86,39 @@ div {
   }
   to {
     transform: rotate(-5deg);
+  }
+}
+
+#gold-light {
+  filter: drop-shadow(0 0 2px rgba(247, 207, 10, 0.7))
+    drop-shadow(0 0 5px rgba(247, 207, 10, 0.7))
+    drop-shadow(0 0 15px rgba(247, 207, 10, 0.7));
+  -webkit-animation: blink 1s ease-in;
+  -moz-animation: blink 1s ease-in;
+  animation: blink 1s ease-in;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

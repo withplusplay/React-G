@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalProfit = 0; // 총이익
   let getGold = 0; // 획득 골드수
 
+  // sound
+  let successSound = new Audio("../sound/success.wav");
+  let failSound = new Audio("../sound/fail02.wav");
+
   //create Board
   function createBoard() {
     foundGold.innerHTML = getGold;
@@ -188,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isGameOver) return;
     if (square.classList.contains("checked")) return;
     if (square.classList.contains("bomb")) {
+      failSound.play();
       square.innerHTML = "<img src='./img/bomb.png' >";
       square.classList.remove("bomb");
       square.classList.add("checked");
@@ -197,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 400);
       clickCount++;
     } else {
-      square.innerHTML = "<img src='./img/goldbar.png' >";
+      successSound.play();
+      square.innerHTML = "<img id='gold-light' src='./img/goldbar.png' >";
       square.classList.remove("gold");
       square.classList.add("checked");
       getGold++;
