@@ -2,6 +2,7 @@ html,
 body {
   display: flex;
   height: 100%;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: #e5edf2;
@@ -29,15 +30,45 @@ body {
   margin-left: -67.5px;
 }
 
+.phone-score {
+  width: 480px;
+  height: 1150px;
+  background-color: #ffd007;
+  position: relative;
+  border-radius: 40px;
+  margin: 30px auto;
+  box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.1);
+}
+.phone-score::after {
+  content: "";
+  width: 135px;
+  height: 6px;
+  background-color: #8f6d00;
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+  margin-left: -67.5px;
+}
+
 .inner {
-  padding: 70px 24px 0 24px;
+  padding: 80px 24px 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.inner-score {
+  padding: 80px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .container {
   width: 960px;
-  height: 1010px;
+  height: 960px;
   border-radius: 30px;
   background: #4199d3;
 }

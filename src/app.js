@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
-  const foundGold = document.querySelector("#found-golds");
+  const totalProfits = document.querySelector("#total-profit");
+  const getGolds = document.querySelector("#get-golds");
+  const totalClicks = document.querySelector("#total-click");
   const result = document.querySelector("#result");
   let width = 12;
   let squares = [];
@@ -22,7 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //create Board
   function createBoard() {
-    foundGold.innerHTML = getGold;
+    totalProfits.innerHTML = totalProfit;
+    getGolds.innerHTML = getGold;
+    totalClicks.innerHTML = clickCount;
 
     const basedArray = [
       "gold",
@@ -208,12 +212,13 @@ document.addEventListener("DOMContentLoaded", () => {
       square.classList.add("checked");
       getGold++;
       clickCount++;
-      //foundGold.innerHTML = getGold;
+      getGolds.innerHTML = getGold;
     }
 
+    totalClicks.innerHTML = clickCount;
     totalCost = costExp * clickCount; // 총 소모 비용
     totalProfit = calRevenue() - totalCost; // 총 이익 계산
-    foundGold.innerHTML = totalProfit.toLocaleString("ko-KR"); // 이익 계산결과 표시
+    totalProfits.innerHTML = totalProfit.toLocaleString("ko-KR"); // 이익 계산결과 표시
     checkForComplete();
   }
 
