@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkForComplete() {
     ///simplified win argument
     if (getGold === goldAmount) {
-      result.innerHTML = "Found All";
+      result.innerHTML = "🔘 Found All";
       isGameOver = true;
     }
   }
