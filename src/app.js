@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let getGold = 0; // 획득 골드수
 
   // sound
-  let successSound = new Audio("../sound/success.wav");
-  let failSound = new Audio("../sound/fail.wav");
+  let successSound = new Audio("../sound/success.mp3");
+  let failSound = new Audio("../sound/fail.mp3");
 
   //create Board
   function createBoard() {
