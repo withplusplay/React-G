@@ -90,6 +90,15 @@ body {
   font-family: "Roboto Mono", monospace;
 }
 
+.result-board {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-size: 45px;
+  font-family: "Roboto Mono", monospace;
+}
+
 .checked {
   height: 70px;
   width: 70px;
@@ -161,8 +170,7 @@ body {
 }
 
 #result {
-  margin-top: 5px;
-  color: #e76346;
+  color: red;
 }
 
 img {
@@ -176,4 +184,12 @@ img {
   margin: auto;
   text-align: center;
   font-size: clamp(50px, 30vw, 70px);
+}
+
+.img-align {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
 }

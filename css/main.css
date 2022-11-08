@@ -169,3 +169,11 @@ img {
   position: relative;
   left: 3px;
 }
+
+.img-align {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 100px;
+  margin: auto;
+}
