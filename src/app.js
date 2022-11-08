@@ -216,9 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     totalClicks.innerHTML = clickCount;
-    setTimeout(function () {
-      getGolds.innerHTML = getGold;
-    }, 100);
     totalCost = costExp * clickCount; // 총 소모 비용
     totalProfit = calRevenue() - totalCost; // 총 이익 계산
     totalProfits.innerHTML = totalProfit.toLocaleString("ko-KR"); // 이익 계산결과 표시
