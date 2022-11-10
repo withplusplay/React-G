@@ -18,9 +18,37 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalProfit = 0; // 총이익
   let getGold = 0; // 획득 골드수
 
-  // sound
-  let successSound = new Audio("./sound/success.mp3");
-  let failSound = new Audio("./sound/fail.mp3");
+  // sound가 종료되지 않은 상황에서 연속 재생을 위한 꼼수
+  // Audio 객체를 담아둘 배열
+  const succ_arr_sound = [];
+  const fail_arr_sound = [];
+
+  // 10개의 Audio객체를 배열에 담아둔다.
+  for (let i = 0; i < 10; i++) {
+    const succ_sound = new Audio();
+    succ_sound.src = "./sound/success.mp3";
+    const fail_sound = new Audio();
+    fail_sound.src = "./sound/fail.mp3";
+
+    // 크롬 예외 처리: audio 재생이 끝나면, 다시 로드해준다
+    succ_sound.addEventListener("ended", function () {
+      if (window.chrome) {
+        this.load();
+      }
+      this.pause();
+    });
+
+    fail_sound.addEventListener("ended", function () {
+      if (window.chrome) {
+        this.load();
+      }
+      this.pause();
+    });
+
+    succ_arr_sound.push(succ_sound);
+    fail_arr_sound.push(fail_sound);
+  }
+  ////////////////////////////////////////////////////////
 
   //create Board
   function createBoard() {
@@ -196,7 +224,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isGameOver) return;
     if (square.classList.contains("checked")) return;
     if (square.classList.contains("bomb")) {
-      failSound.play();
+      for (let i = 0; i < fail_arr_sound.length; i++) {
+        if (fail_arr_sound[i].paused) {
+          // 재생중이 아닌 Audio객체를 찾아서
+          fail_arr_sound[i].play(); // 1회만 재생하고
+          break; // 반복문을 나간다.
+        }
+      }
+
       square.innerHTML = "<img src='./img/bomb.png' >";
       square.classList.remove("bomb");
       square.classList.add("checked");
@@ -206,7 +241,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 400);
       clickCount++;
     } else {
-      successSound.play();
+      for (let i = 0; i < succ_arr_sound.length; i++) {
+        if (succ_arr_sound[i].paused) {
+          // 재생중이 아닌 Audio객체를 찾아서
+          succ_arr_sound[i].play(); // 1회만 재생하고
+          break; // 반복문을 나간다.
+        }
+      }
+
       square.innerHTML = "<img id='gold-light' src='./img/goldbar.png' >";
       square.classList.remove("gold");
       square.classList.add("checked");
